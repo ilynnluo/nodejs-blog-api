@@ -1,19 +1,17 @@
 [
   {
-    "id": 1,
+    "id": "",
+    "fileType": "published",
     "title": "Swimming and picnic in Willow Beach Conservation Area",
     "cover": "/simco.jpg",
-    "introduction": "Looking to take your team away on a retreat to enjoy awesome food and take in some sunshine? We have a list of places to do just that.",
     "length": 4,
     "unit": "hours",
     "areaTags": [
       "GTA"
     ],
-    "departure": {
-      "province": "Ontario",
-      "city": "Aurora"
-    },
-    "desitinations": [
+    "departProvince": "Ontario",
+    "departCity": "Aurora",
+    "destinations": [
       {
         "id": 1,
         "province": "Ontario",
@@ -63,20 +61,18 @@
     ]
   },
   {
-    "id": 2,
+    "id": "",
+    "fileType": "published",
     "title": "Hiking in Kejimkujik National Park and National Historic Site",
     "cover": "/kejimkujik.jpg",
-    "introduction": "Looking to take your team away on a retreat to enjoy awesome food and take in some sunshine? We have a list of places to do just that.",
     "length": 2,
     "unit": "days",
     "areaTags": [
       "Halifax"
     ],
-    "departure": {
-      "province": "Nova Scotia",
-      "city": "Halifax"
-    },
-    "desitinations": [
+    "departProvince": "Nova Scotia",
+    "departCity": "Halifax",
+    "destinations": [
       {
         "id": 1,
         "province": "Ontario",
