@@ -2,15 +2,20 @@ const express = require('express')
 const router = express.Router()
 const data = {}
 data.posts = require('../../data/posts.json')
+router.use(express.json())
+// app.use(express.urlencoded({ extended: true }))
 
 router.route('/')
-  // get all posts
   .get((req, res) => {
     res.json(data.posts)
   })
-  // create post
-  .post('/posts/create', (req, res) => {
-    res.json(data.posts.push(req.body))
+
+router.route('/create')
+  .post((req, res) => {
+    res.send('created successfully')
+    // res.json(data.posts.push(req.body))
+    console.log(req.body)
+    // res.json(req.body)
   })
 
 router.route('/:id')
