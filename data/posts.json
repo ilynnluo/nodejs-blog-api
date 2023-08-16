@@ -107,7 +107,83 @@
     ]
   },
   {
-    "id": "",
+    "id": 3,
+    "fileType": "published",
+    "title": "Swimming and picnic in Willow Beach Conservation Area",
+    "cover": "/simco.jpg",
+    "length": 4,
+    "unit": "hours",
+    "areaTags": [
+      "GTA"
+    ],
+    "departProvince": "Ontario",
+    "departCity": "Aurora",
+    "destinations": [
+      {
+        "id": 1,
+        "province": "Ontario",
+        "city": "Geogina",
+        "spots": [
+          {
+            "id": 1,
+            "name": "Elpida Café & Roastery"
+          }
+        ],
+        "features": [
+          {
+            "id": 1,
+            "name": "cafe"
+          }
+        ],
+        "activities": [
+          {
+            "id": 1,
+            "name": "Shopping"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "c44a2ecd-dd69-4037-a71d-812ea84e139a",
+    "fileType": "published",
+    "title": "Swimming and picnic in Willow Beach Conservation Area",
+    "cover": "/simco.jpg",
+    "length": 4,
+    "unit": "hours",
+    "areaTags": [
+      "GTA"
+    ],
+    "departProvince": "Ontario",
+    "departCity": "Aurora",
+    "destinations": [
+      {
+        "id": 1,
+        "province": "Ontario",
+        "city": "Geogina",
+        "spots": [
+          {
+            "id": 1,
+            "name": "Elpida Café & Roastery"
+          }
+        ],
+        "features": [
+          {
+            "id": 1,
+            "name": "cafe"
+          }
+        ],
+        "activities": [
+          {
+            "id": 1,
+            "name": "Shopping"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "02f3abcb-6c3b-4593-987b-7e7825006474",
     "fileType": "published",
     "title": "Swimming and picnic in Willow Beach Conservation Area",
     "cover": "/simco.jpg",

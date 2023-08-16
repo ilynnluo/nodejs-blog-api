@@ -1,6 +1,7 @@
 const express = require('express')
 const fs = require('fs')
 const router = express.Router()
+const { v4: uuidv4 } = require('uuid')
 const data = {}
 data.posts = require('../../data/posts.json')
 router.use(express.json())
@@ -14,6 +15,7 @@ router.route('/')
 router.route('/create')
   .post((req, res) => {
     const newPost = req.body
+    newPost.id = uuidv4()
     data.posts.push(newPost)
     console.log('updated posts: ', data.posts)
     fs.writeFile('./data/posts.json', JSON.stringify(data.posts), (e) => {
