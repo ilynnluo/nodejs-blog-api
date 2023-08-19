@@ -5,7 +5,6 @@ const { v4: uuidv4 } = require('uuid')
 const data = {}
 data.posts = require('../../data/posts.json')
 router.use(express.json())
-// app.use(express.urlencoded({ extended: true }))
 
 router.route('/')
   .get((req, res) => {
@@ -38,6 +37,7 @@ router.route('/:id')
       if(post.id === req.body.id) getIndex = index
     })
     data.posts.splice(getIndex, 0, updatePost)
+    data.posts.splice(getIndex+1, 1)
     fs.writeFile('./data/posts.json', JSON.stringify(data.posts), (e) => {
       e && console.log('update post error: ', e)
     })
