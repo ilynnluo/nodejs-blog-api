@@ -17,7 +17,6 @@ router.route('/create')
     const newPost = req.body
     newPost.id = uuidv4()
     data.posts.push(newPost)
-    console.log('updated posts: ', data.posts)
     fs.writeFile('./data/posts.json', JSON.stringify(data.posts), (e) => {
       if(e !== null) {
         console.log('post new post: ', e)
@@ -31,5 +30,17 @@ router.route('/:id')
   .get((req, res) => {
     res.json(data.posts.find(post => post.id == req.params.id))
   })
-
+  // update post
+  .put((req, res) => {
+    const updatePost = req.body
+    let getIndex
+    data.posts.forEach((post, index) => {
+      if(post.id === req.body.id) getIndex = index
+    })
+    data.posts.splice(getIndex, 0, updatePost)
+    fs.writeFile('./data/posts.json', JSON.stringify(data.posts), (e) => {
+      e && console.log('update post error: ', e)
+    })
+    res.send('updated successfully')
+  })
 module.exports = router;
