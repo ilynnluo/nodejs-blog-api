@@ -1,6 +1,7 @@
 [
   {
     "id": 1,
+    "fileType": "published",
     "title": "Swimming and picnic in Willow Beach Conservation Area",
     "cover": "/simco.jpg",
     "introduction": "Looking to take your team away on a retreat to enjoy awesome food and take in some sunshine? We have a list of places to do just that.",
@@ -10,60 +11,51 @@
       "GTA"
     ],
     "departure": {
-      "province": "Ontario",
-      "city": "Aurora"
+      "province": "NS",
+      "city": "HALIFAX"
     },
-    "desitinations": [
+    "destinations": [
       {
         "id": 1,
-        "province": "Ontario",
-        "city": "Geogina",
-        "spots": [
+        "spotName": "Geogina Beach",
+        "spotFeatures": [
           {
             "id": 1,
-            "name": "Elpida Café & Roastery"
+            "name": "Cafe"
           }
         ],
-        "features": [
+        "spotActivities": [
           {
             "id": 1,
-            "name": "cafe"
+            "name": "Swimming"
           }
         ],
-        "activities": [
-          {
-            "id": 1,
-            "name": "Shopping"
-          }
-        ]
+        "spotProvince": "ON",
+        "spotCity": "GEORGETOWN"
       },
       {
         "id": 2,
-        "province": "Ontario",
-        "city": "Geogina",
-        "spots": [
-          {
-            "id": 1,
-            "name": "Willow Beach Conservation Area"
-          }
-        ],
-        "features": [
+        "spotName": "Willow Beach Conservation Area",
+        "spotFeatures": [
           {
             "id": 1,
             "name": "park"
           }
         ],
-        "activities": [
+        "spotActivities": [
           {
             "id": 1,
             "name": "Swimming"
           }
-        ]
+        ],
+        "spotProvince": "ON",
+        "spotCity": "GEORGETOWN"
       }
     ]
   },
   {
     "id": 2,
+    "fileType": "published",
     "title": "Hiking in Kejimkujik National Park and National Historic Site",
     "cover": "/kejimkujik.jpg",
     "introduction": "Looking to take your team away on a retreat to enjoy awesome food and take in some sunshine? We have a list of places to do just that.",
@@ -73,27 +65,20 @@
       "Halifax"
     ],
     "departure": {
-      "province": "Nova Scotia",
-      "city": "Halifax"
+      "province": "NS",
+      "city": "HALIFAX"
     },
-    "desitinations": [
+    "destinations": [
       {
         "id": 1,
-        "province": "Ontario",
-        "city": "Caledonia",
-        "spots": [
-          {
-            "id": 1,
-            "name": "Kejimkujik National Park and National Historic Site"
-          }
-        ],
-        "features": [
+        "spotName": "Kejimkujik National Park and National Historic Site",
+        "spotFeatures": [
           {
             "id": 1,
             "name": "park"
           }
         ],
-        "activities": [
+        "spotActivities": [
           {
             "id": 1,
             "name": "Hiking"
@@ -102,7 +87,9 @@
             "id": 2,
             "name": "Canoeing"
           }
-        ]
+        ],
+        "spotProvince": "NS",
+        "spotCity": "CALEDONIA"
       }
     ]
   },
@@ -116,13 +103,13 @@
     "areaTags": [
       "GTA"
     ],
-    "departProvince": "Ontario",
-    "departCity": "Aurora",
+    "departProvince": "ON",
+    "departCity": "AURORA",
     "destinations": [
       {
         "id": 1,
-        "province": "Ontario",
-        "city": "Geogina",
+        "province": "ON",
+        "city": "GEOGINA",
         "spots": [
           {
             "id": 1,
@@ -154,13 +141,13 @@
     "areaTags": [
       "GTA"
     ],
-    "departProvince": "Ontario",
-    "departCity": "Aurora",
+    "departProvince": "ON",
+    "departCity": "AURORA",
     "destinations": [
       {
         "id": 1,
-        "province": "Ontario",
-        "city": "Geogina",
+        "province": "ON",
+        "city": "GEOGINA",
         "spots": [
           {
             "id": 1,
@@ -192,13 +179,13 @@
     "areaTags": [
       "GTA"
     ],
-    "departProvince": "Ontario",
-    "departCity": "Aurora",
+    "departProvince": "ON",
+    "departCity": "AURORA",
     "destinations": [
       {
         "id": 1,
-        "province": "Ontario",
-        "city": "Geogina",
+        "province": "ON",
+        "city": "GEOGINA",
         "spots": [
           {
             "id": 1,
