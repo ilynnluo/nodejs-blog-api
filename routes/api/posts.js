@@ -26,7 +26,7 @@ router.route('/create')
       })
       res.send('Created successfully')
     }
-    res.send('Title or ID duplicated')
+    res.send('Fail, Title or ID duplicated')
   }
   )
 
@@ -42,11 +42,26 @@ router.route('/:id')
     data.posts.forEach((post, index) => {
       if (post.id === req.body.id) getIndex = index
     })
-    data.posts.splice(getIndex, 0, updatePost)
-    data.posts.splice(getIndex + 1, 1)
-    fs.writeFile('./data/posts.json', JSON.stringify(data.posts), (e) => {
-      e && console.log('update post error: ', e)
-    })
-    res.send('updated successfully')
+    const duplicatedTitle = () => {
+      if (data.posts.find((p) => p.title === updatePost.title).id === updatePost.id) {
+        console.log(data.posts.find((p) => p.title === updatePost.title))
+        console.log('updatePost.title: ', updatePost.title)
+        return true
+      }
+      return false
+    }
+    console.log('duplicatedTitle(): ', duplicatedTitle())
+    if (duplicatedTitle()) {
+      data.posts.splice(getIndex, 0, updatePost)
+      data.posts.splice(getIndex + 1, 1)
+      fs.writeFile('./data/posts.json', JSON.stringify(data.posts), (e) => {
+        e && console.log('update post error: ', e)
+      })
+      console.log('updated')
+      res.send('updated successfully')
+    } else {
+      console.log('failed')
+      res.send('Failed, Title duplicated')
+    }
   })
 module.exports = router;
