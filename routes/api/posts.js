@@ -14,15 +14,21 @@ router.route('/')
 router.route('/create')
   .post((req, res) => {
     const newPost = req.body
-    newPost.id = uuidv4()
-    data.posts.push(newPost)
-    fs.writeFile('./data/posts.json', JSON.stringify(data.posts), (e) => {
-      if(e !== null) {
-        console.log('post new post: ', e)
-      }
-    })
-    res.send('created successfully')
-  })
+    const duplicatedTitle = data.posts.every((p) => p.title !== newPost.title)
+    const duplicatedId = data.posts.every((p) => p.id !== newPost.id)
+    if (duplicatedTitle && duplicatedId) {
+      newPost.id = uuidv4()
+      data.posts.push(newPost)
+      fs.writeFile('./data/posts.json', JSON.stringify(data.posts), (e) => {
+        if (e !== null) {
+          console.log('post new post: ', e)
+        }
+      })
+      res.send('Created successfully')
+    }
+    res.send('Title or ID duplicated')
+  }
+  )
 
 router.route('/:id')
   // get post by id
@@ -34,10 +40,10 @@ router.route('/:id')
     const updatePost = req.body
     let getIndex
     data.posts.forEach((post, index) => {
-      if(post.id === req.body.id) getIndex = index
+      if (post.id === req.body.id) getIndex = index
     })
     data.posts.splice(getIndex, 0, updatePost)
-    data.posts.splice(getIndex+1, 1)
+    data.posts.splice(getIndex + 1, 1)
     fs.writeFile('./data/posts.json', JSON.stringify(data.posts), (e) => {
       e && console.log('update post error: ', e)
     })
