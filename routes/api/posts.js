@@ -24,9 +24,9 @@ router.route('/create')
           console.log('post new post: ', e)
         }
       })
-      res.send('Created successfully')
+      return res.send('Created successfully')
     }
-    res.send('Fail, Title or ID duplicated')
+    return res.send('Fail, Title or ID duplicated')
   }
   )
 
@@ -38,19 +38,20 @@ router.route('/:id')
   // update post
   .put((req, res) => {
     const updatePost = req.body
+    console.log('updating post: ', updatePost)
     let getIndex
     data.posts.forEach((post, index) => {
       if (post.id === req.body.id) getIndex = index
     })
     const duplicatedTitle = () => {
-      if (data.posts.find((p) => p.title === updatePost.title).id === updatePost.id) {
-        console.log(data.posts.find((p) => p.title === updatePost.title))
-        console.log('updatePost.title: ', updatePost.title)
-        return true
+      for(i = 0; i < data.posts.length ; i++) {
+        if(i !== getIndex) {
+          updatePost.title !== data.posts[i]
+          return true
+        }
+        return false
       }
-      return false
     }
-    console.log('duplicatedTitle(): ', duplicatedTitle())
     if (duplicatedTitle()) {
       data.posts.splice(getIndex, 0, updatePost)
       data.posts.splice(getIndex + 1, 1)
