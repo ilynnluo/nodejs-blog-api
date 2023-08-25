@@ -38,19 +38,20 @@ router.route('/:id')
   // update post
   .put((req, res) => {
     const updatePost = req.body
-    console.log('updating post: ', updatePost)
     let getIndex
     data.posts.forEach((post, index) => {
       if (post.id === req.body.id) getIndex = index
     })
     const duplicatedTitle = () => {
-      for(i = 0; i < data.posts.length ; i++) {
-        if(i !== getIndex) {
-          updatePost.title !== data.posts[i]
-          return true
+      let result = true
+      for (i = 0; i < data.posts.length; i++) {
+        if (i !== getIndex) {
+          if (updatePost.title === data.posts[i].title) {
+            result = false
+          }
         }
-        return false
       }
+      return result
     }
     if (duplicatedTitle()) {
       data.posts.splice(getIndex, 0, updatePost)
@@ -59,10 +60,18 @@ router.route('/:id')
         e && console.log('update post error: ', e)
       })
       console.log('updated')
-      res.send('updated successfully')
+      return res.send('Updated successfully')
     } else {
       console.log('failed')
-      res.send('Failed, Title duplicated')
+      return res.send('Failed, Title duplicated')
     }
+  })
+  // delete post
+  .delete((req, res) => {
+    const updatedPosts = data.posts.filter(post => post.id !== req.params.id)
+    fs.writeFile('./data/posts.json', JSON.stringify(updatedPosts), (e) => {
+      e && console.log('update post error: ', e)
+    })
+    return res.send('Deleted successfully')
   })
 module.exports = router;
